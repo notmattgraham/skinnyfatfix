@@ -367,6 +367,83 @@
     font-weight: 300;
   }
 
+  /* ─── STORY VIDEO ─── */
+  .story-wrap {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .story-video {
+    position: relative;
+    aspect-ratio: 9 / 16;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    background: var(--card);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  .story-video::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(200,169,110,0.2);
+    border-radius: 2px;
+    pointer-events: none;
+  }
+
+  .story-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .story-video-label {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent-light);
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(8px);
+    padding: 5px 10px;
+    border: 1px solid rgba(200,169,110,0.3);
+    z-index: 2;
+  }
+
+  .story-video-mute {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.65);
+    border: 1px solid rgba(200,169,110,0.35);
+    color: var(--accent-light);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+  }
+
+  .story-video-mute:hover {
+    background: rgba(0,0,0,0.85);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
   /* ─── TRANSFORMATION ─── */
   .transform-wrap {
     display: grid;
@@ -690,6 +767,17 @@
       font-size: clamp(32px, 9vw, 48px);
     }
 
+    /* Story video stacks above prose on mobile */
+    .story-wrap {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .story-video {
+      max-width: 260px;
+      margin: 0 auto;
+    }
+
     /* Transformation images stay side by side but taller */
     .transform-wrap {
       grid-template-columns: 1fr 1fr;
@@ -803,7 +891,7 @@
     </div>
 
     <div class="hero-cta">
-      <a href="https://buy.stripe.com/28E8wPfKVdsmcyj2SO77O02" class="cta-primary">Get Instant Access</a>
+      <a href="https://stan.store/notmattgraham/p/the-skinny-fat-fix" class="cta-primary">Get Instant Access</a>
       <p class="price-note">One-time payment — <strong>$49.99</strong></p>
     </div>
   </div>
@@ -853,14 +941,46 @@
 <section>
   <div class="section-label">The Story</div>
   <h2 class="section-title">This Was Me.<br>I Fixed It.</h2>
-  <div class="section-body">
-    <p>For years I thought I had a fat problem. So I dieted. The scale kept dropping. But my body didn't actually look better — I just looked like a smaller, softer version of the same problem.</p>
-    <p>Shirt on? Fine. Shirt off? I hated it.</p>
-    <p>Once I stopped treating it like a fat loss problem and started treating it like what it actually is — <strong>a recomposition problem</strong> — everything changed. Build muscle in the right places. Tighten up body fat slowly. Follow an actual program.</p>
-    <p>My body started changing consistently for the first time. Not fast. But for real.</p>
-    <p>The Skinny Fat Fix is the exact system I wish someone had handed me when I was stuck. Years of figuring it out the hard way — stripped down to what actually works.</p>
+
+  <div class="story-wrap">
+    <div class="section-body">
+      <p>For years I thought I had a fat problem. So I dieted. The scale kept dropping. But my body didn't actually look better — I just looked like a smaller, softer version of the same problem.</p>
+      <p>Shirt on? Fine. Shirt off? I hated it.</p>
+      <p>Once I stopped treating it like a fat loss problem and started treating it like what it actually is — <strong>a recomposition problem</strong> — everything changed. Build muscle in the right places. Tighten up body fat slowly. Follow an actual program.</p>
+      <p>My body started changing consistently for the first time. Not fast. But for real.</p>
+      <p>The Skinny Fat Fix is the exact system I wish someone had handed me when I was stuck. Years of figuring it out the hard way — stripped down to what actually works.</p>
+    </div>
+
+    <div class="story-video">
+      <video
+        id="storyVideo"
+        src="skinny-fat-fix-intro.mp4"
+        poster="skinny-fat-fix-intro-poster.jpg"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-label="Matt Graham — personal intro to The Skinny Fat Fix"></video>
+      <span class="story-video-label">From Matt</span>
+      <button type="button" class="story-video-mute" id="storyVideoMute" aria-label="Unmute video">🔇</button>
+    </div>
   </div>
 </section>
+
+<script>
+  (function () {
+    var v = document.getElementById('storyVideo');
+    var btn = document.getElementById('storyVideoMute');
+    if (!v || !btn) return;
+    btn.addEventListener('click', function () {
+      v.muted = !v.muted;
+      btn.textContent = v.muted ? '🔇' : '🔊';
+      btn.setAttribute('aria-label', v.muted ? 'Unmute video' : 'Mute video');
+      if (!v.muted && v.paused) v.play();
+    });
+  })();
+</script>
 
 <!-- TRANSFORMATION -->
 <div style="max-width: 860px; margin: 0 auto; padding: 0 32px 80px;">
@@ -948,7 +1068,7 @@
     </div>
 
     <div class="cta-btn-wrap">
-      <a href="https://buy.stripe.com/28E8wPfKVdsmcyj2SO77O02" class="cta-btn-large">Get The Skinny Fat Fix — $49.99 →</a>
+      <a href="https://stan.store/notmattgraham/p/the-skinny-fat-fix" class="cta-btn-large">Get The Skinny Fat Fix — $49.99 →</a>
       <p class="cta-guarantee">Instant access. One-time payment. No subscriptions.</p>
     </div>
   </div>
