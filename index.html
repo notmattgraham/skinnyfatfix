@@ -465,6 +465,7 @@
     }
 
     .story-image {
+      width: 100%;
       max-width: 320px;
     }
 
@@ -679,7 +680,17 @@
         grid-template-columns: 1fr;
         gap: 40px;
       }
-      .story-image { max-width: 460px; margin: 0 auto; }
+      .story-image {
+        width: 100%;
+        max-width: 460px;
+        margin: 0 auto;
+      }
+      .ba-slider {
+        aspect-ratio: 1 / 1;
+      }
+      .ba-slider-img img {
+        object-position: center top;
+      }
 
       .hero { padding: 56px 0 40px; }
       section { padding: 72px 0; }
