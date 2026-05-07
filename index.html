@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Skinny Fat Fix — Lose the soft. Keep the muscle.</title>
+  <title>The Skinny Fat Fix | Lose the soft. Keep the muscle.</title>
   <meta name="description" content="A complete recomp system for the skinny fat guy, by a former skinny fat guy. Lose fat, build muscle, finally look like the work you've put in." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Caveat:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -29,6 +29,7 @@
 
       --display:   'Geist', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
       --body:      'Inter Tight', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      --signature: 'Caveat', cursive;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -73,13 +74,16 @@
     }
 
     .brand-mark {
-      font-family: var(--display);
-      font-size: 28px;
-      font-weight: 700;
+      font-family: var(--signature);
+      font-size: 44px;
+      font-weight: 600;
       color: var(--ink);
-      letter-spacing: -0.04em;
+      letter-spacing: -0.02em;
       line-height: 1;
+      display: inline-block;
+      transition: opacity 0.2s ease;
     }
+    .brand-mark:hover { opacity: 0.65; }
 
     .header-back {
       font-size: 13px;
@@ -358,53 +362,18 @@
       align-items: start;
     }
 
-    .story-video {
-      position: relative;
-      aspect-ratio: 9 / 16;
+    .story-image {
+      max-width: 320px;
       background: var(--bg-card);
       border: 1px solid var(--hairline);
       overflow: hidden;
-      max-width: 320px;
     }
 
-    .story-video video {
+    .story-image img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .story-video-mute {
-      position: absolute;
-      bottom: 14px;
-      right: 14px;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(13, 12, 10, 0.72);
-      backdrop-filter: blur(6px);
-      color: var(--ink);
-      cursor: pointer;
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s ease;
-    }
-    .story-video-mute:hover { background: rgba(13, 12, 10, 0.9); }
-
-    .story-video-tag {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink);
-      background: rgba(13, 12, 10, 0.72);
-      backdrop-filter: blur(6px);
-      padding: 5px 10px;
-      font-weight: 500;
+      height: auto;
+      display: block;
+      filter: contrast(1.03) saturate(0.94);
     }
 
     /* ── INCLUDES (WHAT'S INSIDE) ── */
@@ -618,7 +587,7 @@
         grid-template-columns: 1fr;
         gap: 40px;
       }
-      .story-video { max-width: 280px; margin: 0 auto; }
+      .story-image { max-width: 280px; margin: 0 auto; }
 
       .hero { padding: 56px 0 40px; }
       section { padding: 72px 0; }
@@ -687,7 +656,7 @@
     <h1>Lose the soft.<br><span class="accent">Keep the muscle.</span></h1>
 
     <p class="lead">
-      <strong>The Skinny Fat Fix</strong> is a complete recomp system &mdash; built by a former skinny fat guy who lived in that body for years and figured out the way out. No fluff. No fads. Just the protocol that works.
+      <strong>The Skinny Fat Fix</strong> is a complete recomp system, built by a former skinny fat guy who lived in that body for years and figured out the way out. Everything I learned, in one place.
     </p>
 
     <div class="hero-cta-row">
@@ -717,11 +686,11 @@
 <!-- ── BEFORE/AFTER ── -->
 <div class="transformation reveal">
   <div class="ba-img">
-    <img src="before.jpeg" alt="Before — skinny fat physique" loading="lazy" />
+    <img src="before.jpeg" alt="Before: skinny fat physique" loading="lazy" />
     <span class="ba-label">Before</span>
   </div>
   <div class="ba-img">
-    <img src="after.jpeg" alt="After — The Skinny Fat Fix result" loading="lazy" />
+    <img src="after.jpeg" alt="After: result of The Skinny Fat Fix protocol" loading="lazy" />
     <span class="ba-label after">After</span>
   </div>
 </div>
@@ -732,8 +701,8 @@
     <h2 class="reveal">You already know what it feels like.</h2>
 
     <div class="prose reveal">
-      <p>Fine in clothes. Soft without one. You've cut and ended up smaller but still soft. You've bulked and just got chubbier in places you didn't want size.</p>
-      <p>The advice you've been following was built for someone else's body &mdash; the guy who's already lean trying to get bigger, or the guy who's overweight trying to lose fat. <strong>Skinny fat is the body type that gets ignored.</strong></p>
+      <p>Fine in clothes. Soft with your shirt off. You've cut and ended up smaller but still soft. You've bulked and just got chubbier in places you didn't want size.</p>
+      <p>The advice you've been following was built for someone else's body. The guy who's already lean trying to get bigger. The guy who's overweight trying to lose fat. <strong>Skinny fat is the body type that gets ignored.</strong></p>
     </div>
 
     <div class="punchline reveal">
@@ -755,7 +724,7 @@
       </div>
       <div class="pain-card">
         <h3>You stopped trusting the process.</h3>
-        <p>Programs change every few months. Nothing sticks. You're skeptical of every new claim &mdash; rightfully so.</p>
+        <p>Programs change every few months. Nothing sticks. You're skeptical of every new claim. Rightfully so.</p>
       </div>
     </div>
   </div>
@@ -768,22 +737,18 @@
 
     <div class="story-grid">
       <div class="prose reveal">
-        <p>For years I thought I had a fat problem. So I dieted. The scale kept dropping. But my body didn't actually look better &mdash; I just looked like a smaller, softer version of the same problem.</p>
+        <p>For years I thought I had a fat problem. So I dieted. The scale kept dropping. But my body didn't actually look better. I just looked like a smaller, softer version of the same problem.</p>
         <p>Shirt on? Fine. Shirt off? I hated it.</p>
-        <p>Once I stopped treating it like a fat-loss problem and started treating it like what it actually is &mdash; <strong>a recomposition problem</strong> &mdash; everything changed. Build muscle in the right places. Tighten body fat slowly. Follow an actual program.</p>
+        <p>Once I stopped treating it like a fat-loss problem and started treating it like a recomposition problem, everything changed. Build muscle in the right places. Tighten body fat slowly. Follow an actual program.</p>
         <p>My body started changing consistently for the first time. Not fast. Real.</p>
         <p><strong>The Skinny Fat Fix is the exact system I wish someone had handed me when I was stuck.</strong> Years of figuring it out the hard way, stripped down to what actually moves the needle.</p>
       </div>
 
-      <div class="story-video reveal">
-        <video
-          id="storyVideo"
-          src="skinny-fat-fix-intro.mp4"
-          poster="skinny-fat-fix-intro-poster.jpg"
-          autoplay muted loop playsinline preload="metadata"
-          aria-label="Matt Graham &mdash; personal intro to The Skinny Fat Fix"></video>
-        <span class="story-video-tag">From Matt</span>
-        <button type="button" class="story-video-mute" id="storyVideoMute" aria-label="Unmute video"></button>
+      <div class="story-image reveal">
+        <picture>
+          <source srcset="skinnyfatmatt.webp" type="image/webp">
+          <img src="skinnyfatmatt.jpg" alt="Matt during the skinny fat era" loading="lazy" width="654" height="872">
+        </picture>
       </div>
     </div>
   </div>
@@ -795,7 +760,7 @@
     <h2 class="reveal">Everything you need.<br>Nothing you don't.</h2>
 
     <div class="prose reveal">
-      <p>No filler. No five-star meal plans you'll never cook. No advice copied from someone with a different body type. The complete system &mdash; the same one I used to fix my own &mdash; broken into five components that work together.</p>
+      <p>No filler. No five-star meal plans you'll never cook. No advice copied from someone with a different body type. The complete system, the same one I used to fix my own, broken into five components that work together.</p>
     </div>
 
     <div class="includes reveal-stagger">
@@ -803,7 +768,7 @@
         <div class="include-num">01</div>
         <div class="include-content">
           <h3>The Lifting Program</h3>
-          <p>Structured progressive overload built specifically for skinny fat physiques. Builds muscle in the places that change how a shirt-off body actually reads &mdash; chest, shoulders, back, arms &mdash; without wasting time on movements that don't matter for your body type.</p>
+          <p>Structured progressive overload built specifically for skinny fat physiques. Builds muscle where it changes how a shirt-off body actually reads: chest, shoulders, back, arms. No wasted time on movements that don't matter for your body type.</p>
         </div>
       </div>
       <div class="include-item">
@@ -824,14 +789,14 @@
         <div class="include-num">04</div>
         <div class="include-content">
           <h3>Supplement Guide</h3>
-          <p>What actually works. What's a waste of money. No affiliate bias, no upsells &mdash; just the short list of supplements that move the needle and the longer list of ones to skip.</p>
+          <p>What actually works. What's a waste of money. No affiliate bias. No upsells. Just the short list of supplements that move the needle, and the longer list of ones to skip.</p>
         </div>
       </div>
       <div class="include-item">
         <div class="include-num">05</div>
         <div class="include-content">
           <h3>Community Access</h3>
-          <p>A private group of guys running the same protocol. Accountability, questions answered, real progress shared. The thing most fitness programs leave out &mdash; included by default.</p>
+          <p>A private group of guys running the same protocol. Accountability, questions answered, real progress shared. The thing most fitness programs leave out. Included by default.</p>
         </div>
       </div>
     </div>
@@ -850,7 +815,7 @@
       <h2>Stop guessing.<br>Start fixing.</h2>
 
       <p class="lead">
-        A year from now you're either still the guy who looks fine in clothes and hates what he sees without one &mdash; or you're not. $49.99 is nothing compared to another year of spinning your wheels.
+        A year from now, you're either still the guy who hates what he sees in the mirror with his shirt off, or you're not. $49.99 is nothing compared to another year of spinning your wheels.
       </p>
 
       <div class="check-list">
@@ -885,24 +850,6 @@
 </footer>
 
 <script>
-  // Mute toggle for story video
-  (function () {
-    var v = document.getElementById('storyVideo');
-    var btn = document.getElementById('storyVideoMute');
-    if (!v || !btn) return;
-
-    var iconMuted = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>';
-    var iconUnmuted = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
-
-    btn.innerHTML = iconMuted;
-    btn.addEventListener('click', function () {
-      v.muted = !v.muted;
-      btn.innerHTML = v.muted ? iconMuted : iconUnmuted;
-      btn.setAttribute('aria-label', v.muted ? 'Unmute video' : 'Mute video');
-      if (!v.muted && v.paused) v.play();
-    });
-  })();
-
   // Scroll reveals
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     var observer = new IntersectionObserver(function (entries) {
